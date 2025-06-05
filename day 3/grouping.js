@@ -148,4 +148,38 @@ const groupedAuthorTags = Object.entries(posts.reduce((acc, item) => {
 
 
 
-console.log(groupedAuthorTags)
+// console.log(groupedAuthorTags)
+
+
+
+
+const purchases = [
+  { id: 1, customer: 'Alice', items: ['laptop', 'mouse'] },
+  { id: 2, customer: 'Bob', items: ['mouse', 'keyboard'] },
+  { id: 3, customer: 'Alice', items: ['monitor', 'mouse'] },
+  { id: 4, customer: 'Charlie', items: ['laptop'] },
+  { id: 5, customer: 'Bob', items: ['monitor', 'keyboard'] },
+  { id: 6, customer: 'Alice', items: ['laptop'] }
+];
+
+
+//Group purchases by customer and find how many time each item was bought by the customer
+const groupedPurchases = Object.entries(purchases.reduce((acc, item) => {
+    const {customer, items} = item
+    if(!acc[customer]) acc[customer] = []
+    acc[customer].push(items)
+    return acc
+}, {}))
+.map(([purchaser, listOfItems]) => {
+    const flatListOfItems = listOfItems.flat()
+    const itemCounts = flatListOfItems.reduce((acc, item) => {
+        acc[item] = (acc[item] || 0) + 1
+        return acc
+    }, {})
+    return {
+        purchaser, 
+        itemCounts
+    }
+})
+
+console.log(groupedPurchases)
