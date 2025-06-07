@@ -61,7 +61,7 @@ const orders = [
 //Merge User data and Order data
 
 const userLookUp = Object.fromEntries(users.map(user => [user.id, user]))
-
+console.log(userLookUp)
 const groupedOrders = Object.entries(orders.reduce((acc, item) => {
     const {userId, total} = item
     if(!acc[userId]) acc[userId] = []
