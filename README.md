@@ -4,22 +4,22 @@ Daily JS Practice files
 
 ## Basics:
 
-> **.reduce()**
+-  **.reduce()**
 <object>.reduce((acc, item) => {
     ...
     return acc
 }, {})
 
-> **.map()**
+- **.map()**
 <object>.map((entry, index) => ...)
 
-> **.entries()**
+- **.entries()**
 Object.entries(<object>) converts from {} to [] to make it easy for iteration by .map()
 
-> **.fromEntries()**
+- **.fromEntries()**
 Plain opposite of Object.entries()
 
-> **.flat()**
+- **.flat()**
 converts [['a', 'b'], ['c', 'd']] to ['a', 'b', 'c', 'd']
 
 > **[...new Set(<Array>)]**
