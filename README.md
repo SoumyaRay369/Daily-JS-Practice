@@ -22,5 +22,5 @@ Plain opposite of Object.entries()
 - **.flat()**
 converts [['a', 'b'], ['c', 'd']] to ['a', 'b', 'c', 'd']
 
-> **[...new Set(<Array>)]**
+- **[...new Set(<Array>)]**
 filters only the unique elements from the Array
